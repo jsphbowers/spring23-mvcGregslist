@@ -1,4 +1,5 @@
 import { appState } from "../AppState.js";
+import { House } from "../Models/House.js";
 import { setHTML } from "../Utils/Writer.js";
 
 function _drawHouses() {
@@ -9,7 +10,7 @@ function _drawHouses() {
 }
 
 function _drawHouseForm() {
-  setHTML('form', '[Make it]')
+  setHTML('form', House.HouseForm())
 }
 
 export class HousesController {
