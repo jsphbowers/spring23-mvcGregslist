@@ -33,7 +33,7 @@ export class House {
 
   static HouseForm() {
     return `
-    <form onsubmit="app.carsController.createCar()" class="row bg-white rounded p-4 elevation-2">
+    <form onsubmit="app.housesController.createHouse()" class="row bg-white rounded p-4 elevation-2">
             <h3>List a House:</h3>
             <div class="mb-2 col-4">
               <label for="address">Address</label>
@@ -45,12 +45,12 @@ export class House {
               <input type="number" name="price" id="price" class="form-control" placeholder="$" required min="0">
             </div>
             <div class="mb-2 col-4">
-              <label for="sqfeet">Square Footage</label>
-              <input type="number" name="sqfeet" id="sqfeet" class="form-control" required min="0">
+              <label for="sqfoot">Square Footage</label>
+              <input type="number" name="sqfoot" id="sqfoot" class="form-control" required min="0">
             </div>
             <div class="mb-2 col-4">
               <label for="color">Color</label>
-              <input type="color" name="color" id="color" class="form-control" required>
+              <input type="color" name="color" id="color" class="form-control" required value="#4747ff">
             </div>
             <div class="mb-2 col-4">
               <label for="floors">Floors</label>
@@ -60,6 +60,10 @@ export class House {
               <label for="img">Image</label>
               <input type="url" name="img" id="img" class="form-control" required
                 placeholder="link an image of ur house!">
+            </div>
+            <div class="text-end">
+              <button type="button" class="btn">Cancel</button>
+              <button type="submit" class="btn btn-success">Submit</button>
             </div>
           </form>
     `

@@ -1,5 +1,7 @@
 import { appState } from "../AppState.js";
 import { House } from "../Models/House.js";
+import { housesService } from "../Services/HousesService.js";
+import { getFormData } from "../Utils/FormHandler.js";
 import { setHTML } from "../Utils/Writer.js";
 
 function _drawHouses() {
@@ -22,5 +24,16 @@ export class HousesController {
   showHouses() {
     _drawHouses()
     _drawHouseForm()
+  }
+
+  createHouse() {
+    event.preventDefault()
+    const form = event.target
+    // console.log("form submitted")
+    let formData = getFormData(form)
+    // console.log(formData)
+    housesService.createHouse(formData)
+    form.reset()
+    _drawHouses()
   }
 }
